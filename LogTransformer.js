@@ -35,11 +35,11 @@ const splitInputByChunks = function (string) {
 const splitChunkByKeyValue = function (listOfStrings) {
     const splitString = function (strings, keyObjectValue = {}, iterationIndex = 0) {
         const keyMatch      = strings[iterationIndex].match(/(?<=\[)(.*?)(?=\])/);
-        const escapedString = strings[iterationIndex].replace(/\s+/g, '');
+        const escapedString = strings[iterationIndex].replace(/^\s+|\s+$/g, '');
         const valueMatch    = escapedString.match(/(?<=\>)(.*?)(?=$)/);
 
         if (keyMatch && valueMatch) {
-            Object.assign(keyObjectValue, {[keyMatch[1]]: valueMatch[1]});
+            Object.assign(keyObjectValue, {[keyMatch[1].replace(/^\s+|\s+$/g, '')]: valueMatch[1].replace(/^\s+|\s+$/g, '')});
         }
 
         return listOfStrings[iterationIndex + 1]
