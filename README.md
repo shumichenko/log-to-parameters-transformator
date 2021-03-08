@@ -1,7 +1,7 @@
 ## Log output transformator utility
 
 This utility saves your time by transforming array-like log output into parameters string.
-It is useful for developers and testers who need to insert parameters manually in API testing tools.
+It is useful for developers and testers who need to insert parameters manually in API testing tools everytime.
 
 ### Supported output types:
 * GET PARAMETERS URL STRING
