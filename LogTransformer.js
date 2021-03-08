@@ -29,17 +29,17 @@ let outputTypeString = '';
 let inputStringData  = '';
 
 const splitInputByChunks = function (string) {
-    return string.split(/$\[|.(?=\[)/g);
+    return string.split(/(?=\[)/g);
 };
 
 const splitChunkByKeyValue = function (listOfStrings) {
     const splitString = function (strings, keyObjectValue = {}, iterationIndex = 0) {
         const keyMatch      = strings[iterationIndex].match(/(?<=\[)(.*?)(?=\])/);
-        const escapedString = strings[iterationIndex].replace(/^\s+|\s+$/g, '');
+        const escapedString = strings[iterationIndex].trim();
         const valueMatch    = escapedString.match(/(?<=\>)(.*?)(?=$)/);
 
         if (keyMatch && valueMatch) {
-            Object.assign(keyObjectValue, {[keyMatch[1].replace(/^\s+|\s+$/g, '')]: valueMatch[1].replace(/^\s+|\s+$/g, '')});
+            Object.assign(keyObjectValue, {[keyMatch[1].trim()]: valueMatch[1].trim()});
         }
 
         return listOfStrings[iterationIndex + 1]
