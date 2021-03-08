@@ -1,6 +1,6 @@
 ## Log output transformator utility
 
-This utility saves your time by transforming array-like log output into parameters string.
+This utility saves your time by transforming array-like log output into parameters string.  
 It is useful for developers and testers who need to insert parameters manually in API testing tools everytime.
 
 ### Supported output types:
@@ -61,4 +61,3 @@ To make it fast (If there's no `Node.js`):
 3) Copy this code and run in your Browser console or other js interpreter![success](https://user-images.githubusercontent.com/37748474/110335058-856b7980-8034-11eb-80a4-49b0e6c5cf1f.png)
 
 4) Copy output string and insert into API testing tool (Postman, Insomnia, etc.) which will automaticaly pin parameters to request![postman](https://user-images.githubusercontent.com/37748474/110335285-bba8f900-8034-11eb-963a-fa7a2cefa092.png)
-![Uploading nodejs.png…]()
